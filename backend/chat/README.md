@@ -1,6 +1,4 @@
-About backend, is created using maven & springWeb
-
-:
+About backend, is created using maven & springWeb:
 
 🚀 Getting Started with Maven + Spring Web
 Follow these steps to set up a basic Spring Boot project using Maven and Spring Web:
@@ -65,10 +63,9 @@ mvn clean install
 5. ▶️ Run the Application
 Use your IDE or run the following command in the terminal:
 
-bash
-Copy
-Edit
+bash: 
 mvn spring-boot:run
+
 The application will start at:
 http://localhost:8080
 
