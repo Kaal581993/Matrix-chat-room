@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: #00ff00;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.username-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 black;
+}
+
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #00ff00;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #00ff00;
+  color: black;
+  transition: 0.3s;
+}
+
+.video-container {
+  margin-top: 20px;
+}
+
+
+@keyframes glitch {
+  0% {
+    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translateX(-5px);
+    clip-path: inset(0 10px 0 0);
+  }
+  40% {
+    transform: translateX(5px);
+    clip-path: inset(0 0 0 10px);
+  }
+  60% {
+    transform: translateX(-3px);
+    clip-path: inset(0 3px 0 0);
+  }
+  80% {
+    transform: translateX(3px);
+    clip-path: inset(0 0 0 3px);
+  }
+  100% {
+    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.video-container video {
+  border: 1px solid #00ff00;
+  animation: glitch 1.5s infinite linear;
+  filter: contrast(1.5) brightness(0.9);
+  border-radius: 10px;
+}
+@keyframes matrixRain {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.matrix-rain span {
+  position: absolute;
+  font-size: 2em;
+  color: #00ff00;
+  animation: matrixRain 3s linear infinite;
+}
+
+@keyframes matrixRainSpawn {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.matrix-rain span:nth-child(even) {
+  animation: matrixRain 2.5s linear infinite;
+  animation-delay: -1s;
+}
+
+.matrix-rain span:nth-child(odd) {
+  animation: matrixRain 2.5s linear infinite;
+  animation-delay: -1.5s;
+}
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.matrix-rain span {
+  position: absolute;
+  font-size: 2em;
+  color: #00ff00;
+  animation: matrixRain 3s linear infinite;
+}
+/*
+/* Matrix rain effect for the entire screen
+@keyframes matrixRain {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.matrix-rain span {
+  position: absolute;
+  font-size: 2em;
+  color: #00ff00;
+  animation: matrixRain 3s linear infinite;
+}
+
+/* Animate messages to follow matrix effect
+.message {
+  position: relative;
+  font-size: 1.2em;
+  color: #00ff00;
+  animation: matrixRain 2.5s linear infinite;
+  animation-delay: 1s;
+}
+
+.message:nth-child(odd) {
+  animation-delay: 1.5s;
+}
+
+.message:nth-child(even) {
+  animation-delay: 2s;
+}
+
+/* Matrix rain effect spawning randomly across the screen
+@keyframes matrixRainSpawn {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.matrix-rain span:nth-child(even) {
+  animation: matrixRain 2.5s linear infinite;
+  animation-delay: -1s;
+}
+
+.matrix-rain span:nth-child(odd) {
+  animation: matrixRain 2.5s linear infinite;
+  animation-delay: -1.5s;
+}
+
+/* Additional styling */
+.video-container video {
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+}
