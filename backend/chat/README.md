@@ -33,33 +33,35 @@ Open the extracted project in your IDE (e.g., IntelliJ IDEA, Eclipse, VS Code).
 3. 📦 Project Structure
 Typical structure:
 
-css
-Copy
-Edit
 src/
 └── main/
+
     ├── java/com/example/chat
+    
     │   └── ChatApplication.java
+    
     └── resources/
+    
         └── application.properties
+        
 4. 🛠️ Add/Check Dependencies
 Ensure the pom.xml has these dependencies:
 
 xml
-Copy
-Edit
+
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 </dependencies>
+
+
 Run:
 
 bash
-Copy
-Edit
 mvn clean install
+
 5. ▶️ Run the Application
 Use your IDE or run the following command in the terminal:
 
